@@ -19,11 +19,11 @@ public class Factory<E> {
     public Set<E> setInterfaz(int x){
         Set<E> lista = null;
         if (x == 1)
-            lista = new HashSet();
+            lista = new HashSet<>();
         if (x == 2)
-            lista = new TreeSet();
+            lista = new TreeSet<>();
         if (x == 3)
-            lista = new LinkedHashSet();
+            lista = new LinkedHashSet<>();
         return lista;
     }
 }

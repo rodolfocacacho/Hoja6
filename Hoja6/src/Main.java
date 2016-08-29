@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.Set;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -11,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Olivet
  */
-public class Main {
+public class Main{
     public static void main(String[] args){
         System.out.println("Bienvenido al programa");
         System.out.println();
@@ -39,12 +40,7 @@ public class Main {
             }
         }
         //Crear interface SET a utilizar
-        if (x == 1)
-            //Factory de HASHSET
-        if (x == 2)
-            //Factory de TREESET
-        if (x == 3)
-            //Factory de LINKEDHASHSET
+        
         x = 0;
         String nombre;
         int y;
