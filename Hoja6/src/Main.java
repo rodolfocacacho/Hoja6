@@ -44,6 +44,8 @@ public class Main{
 	Metodos conjunto_Web = new Metodos(implementacion);
 	Metodos conjunto_Movil = new Metodos(implementacion);
         
+        
+        
         x = 0;
         String nombre;
         int y;
@@ -54,11 +56,13 @@ public class Main{
             System.out.println("Ingrese el nombre del desarrollador "+cont+": ");
             nombre = keyboard.nextLine();
             y = 0;
+            int cont2 = 0;
             while (y == 0){
                 System.out.println("Ingrese el numero correspondiente al area del desarrollador: ");
                 System.out.println("1. Java");
                 System.out.println("2. Web");
                 System.out.println("3. Moviles");
+                System.out.println("4. Terminar con este desarrollador");
                 try{
                     y = Integer.parseInt(keyboard.nextLine());
                 } catch (NumberFormatException e){
@@ -67,18 +71,45 @@ public class Main{
                     System.out.println();
                     y = 0;
                 }
-                if (y < 1 || y > 3){
+                if (y < 1 || y > 4){
                     y = 0;
                     System.out.println();
                     System.out.println("Error: opcion invalida, intentelo de nuevo.");
                     System.out.println();
                 }
+                if (y == 1){
+                    if (cont2 == 1 || cont2 == 4 || cont2 == 6){
+                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                    } else{
+                        conjuntoJava.add(nombre);
+                        y = 0;
+                        cont2 = cont2 + 1;
+                    }
+                }
+                if (y == 2){
+                    if (cont2 == 3 || cont2 == 4 || cont2 == 8){
+                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                    } else{
+                        conjuntoWeb.add(nombre);
+                        y = 0;
+                        cont2 = cont2 + 3;
+                    }
+                }
+                if (y == 3){
+                    if (cont2 == 5 || cont2 == 6 || cont2 == 8){
+                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                    } else {
+                        conjuntoMovil.add(nombre);
+                        y = 0;
+                        cont2 = cont2 + 5;
+                    }
+                }
+                if (cont2 == 9) //Sale de este ciclo si esta en los 3 conjuntos
+                    y = 1;
             }
-            
-            //INGRESAR DATOS EN LA INTERFACE SET UTILIZADA
             z = 0;
             while (z == 0){
-                System.out.println("Desea continuar?");
+                System.out.println("Desea continuar ingresando desarrolladores?");
                 System.out.println("1. Si");
                 System.out.println("2. No");
                  try{
