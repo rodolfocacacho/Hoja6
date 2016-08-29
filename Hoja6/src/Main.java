@@ -47,13 +47,14 @@ public class Main {
             //Factory de LINKEDHASHSET
         x = 0;
         String nombre;
-        int y = 0;
+        int y;
         int cont = 1;
-        int z = 0;
+        int z;
         //Loop ingreso de desarrolladores
         while (x == 0){
             System.out.println("Ingrese el nombre del desarrollador "+cont+": ");
             nombre = keyboard.nextLine();
+            y = 0;
             while (y == 0){
                 System.out.println("Ingrese el numero correspondiente al area del desarrollador: ");
                 System.out.println("1. Java");
@@ -76,7 +77,7 @@ public class Main {
             }
             
             //INGRESAR DATOS EN LA INTERFACE SET UTILIZADA
-            
+            z = 0;
             while (z == 0){
                 System.out.println("Desea continuar?");
                 System.out.println("1. Si");
@@ -97,8 +98,6 @@ public class Main {
                 }
             }
             x = z - 1;
-            y = 0;
-            z = 0;
             cont++;
         }
         //Termino de ingresar desarrolladores
