@@ -12,15 +12,17 @@ import java.util.Set;
 public class Metodos<E> {
     Factory fabrica = new Factory();
     /* Conjuntos que se utilizaran */
-    private Set<E> conjuntoP;
-    private Set<E> conjuntoE;
-    private String text;
+    private Set<E> conjunto;
     
     /* Constructor */
-    public Tables(int value){
-	conjuntoP = fabrica.setTable(value);
-	conjuntoE = fabrica.setTable(value);
-	text = "";
+    public Metodos(int value){
+	conjunto = fabrica.setInterfaz(value);
+    }
+    public void add(E name){
+        conjunto.add(name);
+    }
+    public E get(){
+        conjunto.
     }
     
 }

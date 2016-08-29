@@ -40,9 +40,10 @@ public class Main{
             }
         }
         //Crear interface SET a utilizar
-        Metodos conjunto_Java = new Metodos(implementacion);
-	Metodos conjunto_Web = new Metodos(implementacion);
-	Metodos conjunto_Movil = new Metodos(implementacion);
+        Metodos conjuntoJava = new Metodos(x);
+	Metodos conjuntoWeb = new Metodos(x);
+	Metodos conjuntoMovil = new Metodos(x);
+        Metodos conjuntoTemp = new Metodos(x);
         
         
         
