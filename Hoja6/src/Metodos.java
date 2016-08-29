@@ -9,20 +9,6 @@ import java.util.Set;
  *
  * @author Olivet
  */
-public class Metodos<E> {
-    Factory fabrica = new Factory();
-    /* Conjuntos que se utilizaran */
-    private Set<E> conjunto;
-    
-    /* Constructor */
-    public Metodos(int value){
-	conjunto = fabrica.setInterfaz(value);
-    }
-    public void add(E name){
-        conjunto.add(name);
-    }
-    public E get(){
-        conjunto.
-    }
+public class Metodos {
     
 }
