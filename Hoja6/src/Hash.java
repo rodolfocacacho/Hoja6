@@ -81,4 +81,9 @@ public class Hash<E> {
         return conjuntoResultado;
     }
     
+    public void CopiarResultado(Set<E> conjuntoB){
+    
+        conjuntoPrincipal = conjuntoB;
+    }
+    
 }
