@@ -40,10 +40,10 @@ public class Main{
             }
         }
         //Crear interface SET a utilizar
-        Metodos conjuntoJava = new Metodos(x);
-	Metodos conjuntoWeb = new Metodos(x);
-	Metodos conjuntoMovil = new Metodos(x);
-        Metodos conjuntoTemp = new Metodos(x);
+        Hash conjuntoJava = new Hash(x);
+	Hash conjuntoWeb = new Hash(x);
+	Hash conjuntoMovil = new Hash(x);
+        Hash conjuntoTemp = new Hash(x);
         
         
         
@@ -131,7 +131,16 @@ public class Main{
             x = z - 1;
             cont++;
         }
-        //Termino de ingresar desarrolladores
-        //Llamar a unas funciones que hagan la logica de todo lo pedido en la hoja
+        
+        System.out.println("\nA continuacion se mostraran las estadisticas requeridas: \n");
+        System.out.println("¿Cuáles son los desarrolladores con experiencia en Java, web y celulares?\n");
+        conjuntoTemp.CopiarResultado(conjuntoJava.interseccionTresConjuntos(conjuntoMovil.getConjunto(),conjuntoWeb.getConjunto())); 
+        int cantidad = conjuntoTemp.cantElementos();
+        Object[] nombres = conjuntoTemp.elementos();
+        for (int count1 = 1;count1>=cantidad;count1++){
+            System.out.println(nombres[count1-1]);
+        }
+        
+        
     }
 }
