@@ -1,4 +1,5 @@
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -141,8 +142,44 @@ public class Main{
         System.out.println("\nA continuacion se mostraran las estadisticas requeridas: \n");
         System.out.println("¿Cuáles son los desarrolladores con experiencia en Java, web y celulares?\n");
         conjuntoJava.interseccionTresConjuntos(cWeb,cMovil);
-        cResultado = conjuntoTemp.CopiarResultado();
-        System.out.println("\nLos desarrolladores con experiencia en Java, web y celulares son: "+cResultado);
+        cResultado = conjuntoJava.CopiarResultado();
+        conjuntoTemp.CopiarResultado(cResultado);
+        System.out.println("Los desarrolladores con experiencia en Java, web y celulares son: "+conjuntoTemp.getConjunto()+"\n");
+        conjuntoJava.restaDosConjuntos(cWeb);
+        cResultado = conjuntoJava.CopiarResultado();
+        conjuntoTemp.CopiarResultado(cResultado);
+        System.out.println("Los desarrolladores con experiencia en Java que no tienen experiencia en web son: "+conjuntoTemp.getConjunto()+"\n");
+        conjuntoWeb.interseccionDosConjuntos(cMovil);
+        cResultado = conjuntoWeb.CopiarResultado();
+        conjuntoTemp.CopiarResultado(cResultado);
+        conjuntoTemp.restaDosConjuntos(cJava);
+        System.out.println("Los desarrolladores con experiencia en Web y Celulares pero sin experiencia en java son: "+conjuntoTemp.CopiarResultado()+"\n");
+        conjuntoWeb.unionDosConjuntos(cMovil);
+        cResultado = conjuntoWeb.CopiarResultado();
+        conjuntoTemp.CopiarResultado(cResultado);
+        conjuntoTemp.interseccionDosConjuntos(cJava);
+        System.out.println("Los desarrolladores con experiencia en Web o Celulares, pero que tienen experiencia en java son: "+conjuntoTemp.CopiarResultado()+"\n");
+        if(conjuntoJava.subConjunto(cWeb)){
+            System.out.println("El conjunto de desarrolladores Java es un subconjunto de Desarrolladores Web\n");
+        }
+        else{
+            System.out.println("El conjunto de desarrolladores Java no es un subconjunto de Desarrolladores Web\n");
+        }
+        if(cJava.size()>cWeb.size()&& cJava.size()>cMovil.size()){
+            System.out.println("El conjunto de desarrolladores Java es el mas grande, conformado por: \n");
+            System.out.println(conjuntoJava.toString());
+        }
+        else if(cWeb.size()>cJava.size()&& cWeb.size()>cMovil.size()){
+            System.out.println("El conjunto de desarrolladores Web es el mas grande, conformado por: \n");
+            System.out.println(conjuntoWeb.toString());
+        }
+        else if(cMovil.size()>cJava.size()&& cMovil.size()>cWeb.size()){
+            System.out.println("El conjunto de desarrolladores Movil es el mas grande, conformado por: \n");
+            System.out.println(conjuntoMovil.toString());
+        }
+        else {
+            System.out.println("No hay ningun conjunto mas grande");
+        }
         
         
     }

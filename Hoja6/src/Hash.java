@@ -86,4 +86,25 @@ public class Hash<E> {
         conjuntoPrincipal = conjuntoB;
     }
     
+    public boolean subConjunto(Set<E> conjuntoB){
+	conjuntoResultado.clear();
+	conjuntoResultado.addAll(conjuntoB);
+	conjuntoResultado.retainAll(conjuntoPrincipal);
+	if (conjuntoResultado.size()==conjuntoPrincipal.size()){
+		return true;
+	}
+	else{
+		return false;
+	}
+    }
+    
+    @Override
+    public String toString(){
+	String desarrollador = conjuntoPrincipal.toString();
+        desarrollador = desarrollador.replace("]", "");
+        desarrollador = desarrollador.replace("[", " ");
+        desarrollador = desarrollador.replace(",", "\n");
+        return desarrollador;
+    }
+    
 }
