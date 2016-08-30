@@ -132,14 +132,17 @@ public class Main{
             cont++;
         }
         
+        
+        Set<String> cJava = conjuntoJava.getConjunto();
+        Set<String> cWeb = conjuntoWeb.getConjunto();
+        Set<String> cMovil = conjuntoMovil.getConjunto();
+        Set<String> cResultado = conjuntoTemp.getConjunto();
+        
         System.out.println("\nA continuacion se mostraran las estadisticas requeridas: \n");
         System.out.println("¿Cuáles son los desarrolladores con experiencia en Java, web y celulares?\n");
-        conjuntoTemp.CopiarResultado(conjuntoJava.interseccionTresConjuntos(conjuntoMovil.getConjunto(),conjuntoWeb.getConjunto())); 
-        int cantidad = conjuntoTemp.cantElementos();
-        Object[] nombres = conjuntoTemp.elementos();
-        for (int count1 = 1;count1>=cantidad;count1++){
-            System.out.println(nombres[count1-1]);
-        }
+        conjuntoJava.interseccionTresConjuntos(cWeb,cMovil);
+        cResultado = conjuntoTemp.CopiarResultado();
+        System.out.println("\nLos desarrolladores con experiencia en Java, web y celulares son: "+cResultado);
         
         
     }

@@ -18,6 +18,7 @@ public class Hash<E> {
     /* Constructor */
     public Hash(int value){
 	conjuntoPrincipal = fabrica.setInterfaz(value);
+        conjuntoResultado = fabrica.setInterfaz(value);
     }
     public void add(E name){
         conjuntoPrincipal.add(name);
@@ -75,9 +76,9 @@ public class Hash<E> {
         
     }
     
-    public void CopiarResultado(Set<E> conjuntoB){
+    public Set<E> CopiarResultado(){
     
-        conjuntoPrincipal = conjuntoB;
+        return conjuntoResultado;
     }
     
 }
