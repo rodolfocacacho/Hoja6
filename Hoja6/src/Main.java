@@ -1,16 +1,7 @@
-
 import java.util.Scanner;
 import java.util.Set;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Olivet
+ * @author Rene Olivet y Rodolfo Cacacho
  */
 public class Main{
     public static void main(String[] args){
@@ -54,34 +45,28 @@ public class Main{
         int z;
         //Loop ingreso de desarrolladores
         while (x == 0){
-            System.out.println("Ingrese el nombre del desarrollador "+cont+": ");
+            System.out.println("\nIngrese el nombre del desarrollador "+cont+": ");
             nombre = keyboard.nextLine();
             y = 0;
             int cont2 = 0;
             while (y == 0){
-                System.out.println("Ingrese el numero correspondiente al area del desarrollador: ");
-                System.out.println("1. Java");
-                System.out.println("2. Web");
-                System.out.println("3. Moviles");
-                System.out.println("4. Terminar con este desarrollador");
+                System.out.println("\nIngrese el numero correspondiente al area del desarrollador:\n1. Java\n2. Web\n3. Moviles\n4. Terminar con este desarrollador");
                 try{
                     y = Integer.parseInt(keyboard.nextLine());
                 } catch (NumberFormatException e){
-                    System.out.println();
-                    System.out.println("Error: dato invalido, intentelo de nuevo.");
-                    System.out.println();
+                    System.out.println("\nError: dato invalido, intentelo de nuevo.");
                     y = 0;
                 }
                 if (y < 1 || y > 4){
                     y = 0;
-                    System.out.println();
-                    System.out.println("Error: opcion invalida, intentelo de nuevo.");
-                    System.out.println();
+                    System.out.println("\nError: opcion invalida, intentelo de nuevo.");
                 }
                 if (y == 1){
                     if (cont2 == 1 || cont2 == 4 || cont2 == 6){
-                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                        System.out.println("\nEl desarrollador ya se encuentra en este conjunto");
+                        y = 0;
                     } else{
+                        System.out.println("\nSe añadio a los desarrolladores Java.");
                         conjuntoJava.add(nombre);
                         y = 0;
                         cont2 = cont2 + 1;
@@ -89,8 +74,10 @@ public class Main{
                 }
                 if (y == 2){
                     if (cont2 == 3 || cont2 == 4 || cont2 == 8){
-                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                        System.out.println("\nEl desarrollador ya se encuentra en este conjunto");
+                        y = 0;
                     } else{
+                        System.out.println("\nSe añadio a los desarrolladores Web.");
                         conjuntoWeb.add(nombre);
                         y = 0;
                         cont2 = cont2 + 3;
@@ -98,8 +85,10 @@ public class Main{
                 }
                 if (y == 3){
                     if (cont2 == 5 || cont2 == 6 || cont2 == 8){
-                        System.out.println("El desarrollador ya se encuentra en este conjunto");
+                        System.out.println("\nEl desarrollador ya se encuentra en este conjunto");
+                        y = 0;
                     } else {
+                        System.out.println("\nSe añadio a los desarrolladores Moviles.");
                         conjuntoMovil.add(nombre);
                         y = 0;
                         cont2 = cont2 + 5;
@@ -110,21 +99,19 @@ public class Main{
             }
             z = 0;
             while (z == 0){
-                System.out.println("Desea continuar ingresando desarrolladores?");
-                System.out.println("1. Si");
-                System.out.println("2. No");
+                System.out.println("\nDesea continuar ingresando desarrolladores?\n1. Si\n2. No");
                  try{
                     z = Integer.parseInt(keyboard.nextLine());
                 } catch (NumberFormatException e){
                     System.out.println();
-                    System.out.println("Error: dato invalido, intentelo de nuevo.");
+                    System.out.println("\nError: dato invalido, intentelo de nuevo.");
                     System.out.println();
                     z = 0;
                 }
                 if (z < 1 || z > 2){
                     z = 0;
                     System.out.println();
-                    System.out.println("Error: opcion invalida, intentelo de nuevo.");
+                    System.out.println("\nError: opcion invalida, intentelo de nuevo.");
                     System.out.println();
                 }
             }
